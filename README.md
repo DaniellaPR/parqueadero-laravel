@@ -1,6 +1,7 @@
 # ParkingExpress - Parqueadero del Centro
 
 Nombre: Daniela Pozo
+
 Fecha: 18/12/2025  
 
 ## Decisiones de Diseño
@@ -9,11 +10,44 @@ Fecha: 18/12/2025
 Nombre de la tabla: vehiculos
 
 Campos:
-- placa (string, obligatorio)
-- tipo (string, obligatorio)
-- propietario (string, opcional)
-- observaciones (text, opcional)
-- created_at / updated_at
+<table>
+  <tr>
+    <th>Campo</th>
+    <th>Tipo</th>
+    <th>Obligatorio</th>
+  </tr>
+  <tr>
+    <td>placa</td>
+    <td>string</td>
+    <td>Sí</td>
+  </tr>
+  <tr>
+    <td>tipo</td>
+    <td>string</td>
+    <td>Sí</td>
+  </tr>
+  <tr>
+    <td>propietario</td>
+    <td>string</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>observaciones</td>
+    <td>text</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>created_at</td>
+    <td>timestamp</td>
+    <td>Sí</td>
+  </tr>
+  <tr>
+    <td>updated_at</td>
+    <td>timestamp</td>
+    <td>Sí</td>
+  </tr>
+</table>
+
 
 ### 2. Tipos de vehículo colocados
 - Automóvil
@@ -24,7 +58,7 @@ Campos:
 Al final, no se permite eliminarlos, solo registrar salida.
 
 Razón:
-Para mantener un historial de los vehículos que entraron y salieron y mantener auditoría como explica el hijo.
+Debería mantenerse no eliminarse y solo registrarse las salidas ya que, como dice el hijo, se desearía mantener un historial de los vehículos que entran y salen. Así que, con el método de marcar salida (salida_at) podemos manetener el historial de entradas , salidas y auditoría.
 
 ### 4. Link al github:
 https://github.com/DaniellaPR/parqueadero-laravel
